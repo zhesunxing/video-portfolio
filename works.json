@@ -75,5 +75,12 @@
     "title": "Icon 平台演示",
     "titleEn": "Icon Platform Demo",
     "video": "assets/videos/icon-pingtai-yanshi.mp4"
+  },
+  {
+    "id": "12",
+    "slug": "work-12",
+    "title": "崽崽百变",
+    "titleEn": "Cub Shapeshift",
+    "video": "assets/videos/zaizai-baibian.mp4"
   }
 ]
