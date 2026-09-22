@@ -1,0 +1,262 @@
+/* ---------------------------------------------------------------
+   Video Portfolio — restrained editorial style
+   Palette: warm paper background, near-black ink, muted rust accent
+   No external font/CDN dependencies — fully self-hosted for
+   long-term stability on GitHub Pages.
+   --------------------------------------------------------------- */
+
+:root {
+  --color-bg: #f6f3ee;
+  --color-bg-raised: #fffdf9;
+  --color-ink: #17140f;
+  --color-ink-soft: #57503f;
+  --color-hairline: #ddd6c9;
+  --color-accent: #a34b32;
+  --color-accent-soft: #c98a72;
+  --font-serif: "New York", "Iowan Old Style", "Palatino Linotype", Georgia, "Songti SC", serif;
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Helvetica Neue", Arial, sans-serif;
+  --max-width: 1120px;
+  --gap: 32px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+}
+
+img, video {
+  max-width: 100%;
+  display: block;
+}
+
+.wrap {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ---------- Site header ---------- */
+
+.site-header {
+  padding: 56px 0 40px;
+  border-bottom: 1px solid var(--color-hairline);
+}
+
+.site-header .eyebrow {
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-ink-soft);
+  margin: 0 0 14px;
+}
+
+.site-header h1 {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: clamp(28px, 5vw, 44px);
+  margin: 0 0 16px;
+  letter-spacing: -0.01em;
+}
+
+.site-header p.lede {
+  max-width: 640px;
+  font-size: 16px;
+  color: var(--color-ink-soft);
+  margin: 0;
+}
+
+/* ---------- Works grid (index page) ---------- */
+
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--gap) 28px;
+  padding: 48px 0 80px;
+}
+
+@media (max-width: 860px) {
+  .works-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .works-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
+
+.work-card {
+  display: block;
+  text-decoration: none;
+  color: var(--color-ink);
+  border: 1px solid var(--color-hairline);
+  background: var(--color-bg-raised);
+  border-radius: 3px;
+  overflow: hidden;
+  transition: border-color 0.18s ease, transform 0.18s ease;
+}
+
+.work-card:hover,
+.work-card:focus-visible {
+  border-color: var(--color-accent-soft);
+  transform: translateY(-2px);
+}
+
+.work-card:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.work-card .thumb {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  background: #0f0d0a;
+  overflow: hidden;
+}
+
+.work-card .thumb video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.work-card .thumb .index-no {
+  position: absolute;
+  top: 10px;
+  left: 12px;
+  font-family: var(--font-serif);
+  font-size: 13px;
+  color: #f6f3ee;
+  background: rgba(23, 20, 15, 0.55);
+  padding: 2px 8px;
+  border-radius: 2px;
+  letter-spacing: 0.04em;
+}
+
+.work-card .meta {
+  padding: 16px 18px 20px;
+}
+
+.work-card .meta h2 {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: 18px;
+  margin: 0 0 4px;
+}
+
+.work-card .meta .title-en {
+  font-size: 12px;
+  color: var(--color-ink-soft);
+  letter-spacing: 0.03em;
+  margin: 0;
+}
+
+/* ---------- Site footer ---------- */
+
+.site-footer {
+  border-top: 1px solid var(--color-hairline);
+  padding: 28px 0 56px;
+  font-size: 13px;
+  color: var(--color-ink-soft);
+}
+
+.site-footer a {
+  color: var(--color-ink-soft);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.site-footer a:hover {
+  color: var(--color-accent);
+}
+
+/* ---------- Work detail page ---------- */
+
+.work-header {
+  padding: 40px 0 28px;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--color-ink-soft);
+  text-decoration: none;
+  margin-bottom: 28px;
+}
+
+.back-link:hover {
+  color: var(--color-accent);
+}
+
+.work-header .eyebrow {
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-ink-soft);
+  margin: 0 0 10px;
+}
+
+.work-header h1 {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: clamp(26px, 4.5vw, 38px);
+  margin: 0 0 6px;
+}
+
+.work-header .title-en {
+  font-size: 15px;
+  color: var(--color-ink-soft);
+  margin: 0;
+}
+
+.player-frame {
+  max-width: 720px;
+  margin: 0 auto;
+  padding-bottom: 64px;
+}
+
+.player-frame video {
+  width: 100%;
+  border-radius: 3px;
+  background: #0f0d0a;
+  border: 1px solid var(--color-hairline);
+}
+
+.player-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 720px;
+  margin: 20px auto 0;
+  font-size: 14px;
+}
+
+.player-nav a {
+  text-decoration: none;
+  color: var(--color-ink-soft);
+}
+
+.player-nav a:hover {
+  color: var(--color-accent);
+}
