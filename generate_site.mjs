@@ -38,6 +38,17 @@ function renderIndex() {
     )
     .join("\n");
 
+  const resumeCard = `      <a class="work-card" href="assets/pdf/hou-jichang-portfolio.pdf" target="_blank" rel="noopener">
+        <div class="thumb">
+          <span class="index-no">PDF</span>
+          <div class="thumb-placeholder">视觉设计作品集</div>
+        </div>
+        <div class="meta">
+          <h2>视觉设计作品集</h2>
+          <p class="title-en">Visual Design Portfolio (PDF)</p>
+        </div>
+      </a>`;
+
   return `<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -59,6 +70,7 @@ function renderIndex() {
   <main class="wrap">
     <div class="works-grid">
 ${cards}
+${resumeCard}
     </div>
   </main>
 

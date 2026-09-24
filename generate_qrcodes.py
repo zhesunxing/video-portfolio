@@ -18,6 +18,16 @@ BASE_URL = "https://zhesunxing.github.io/video-portfolio"
 ROOT = os.path.dirname(os.path.abspath(__file__))
 QR_DIR = os.path.join(ROOT, "qrcodes")
 
+# Extra standalone targets that are not part of works.json (e.g. resume PDF).
+EXTRA_TARGETS = [
+    {
+        "id": "resume",
+        "title": "视觉设计作品集 PDF",
+        "url": f"{BASE_URL}/assets/pdf/hou-jichang-portfolio.pdf",
+        "base_name": "resume-portfolio-pdf",
+    },
+]
+
 
 def slugify_title(title_en):
     return (
@@ -79,6 +89,45 @@ def main():
             }
         )
         print(f"generated {base_name}.png / .svg -> {url}")
+
+    for item in EXTRA_TARGETS:
+        png_path = os.path.join(QR_DIR, f"{item['base_name']}.png")
+        svg_path = os.path.join(QR_DIR, f"{item['base_name']}.svg")
+
+        qr = qrcode.QRCode(
+            version=None,
+            error_correction=qrcode.constants.ERROR_CORRECT_M,
+            box_size=10,
+            border=4,
+        )
+        qr.add_data(item["url"])
+        qr.make(fit=True)
+        img = qr.make_image(fill_color="black", back_color="white")
+        img.save(png_path)
+
+        factory = qrcode.image.svg.SvgPathImage
+        svg_qr = qrcode.QRCode(
+            version=None,
+            error_correction=qrcode.constants.ERROR_CORRECT_M,
+            box_size=10,
+            border=4,
+            image_factory=factory,
+        )
+        svg_qr.add_data(item["url"])
+        svg_qr.make(fit=True)
+        svg_img = svg_qr.make_image()
+        svg_img.save(svg_path)
+
+        rows.append(
+            {
+                "序号": item["id"],
+                "作品名称": item["title"],
+                "正式播放地址": item["url"],
+                "PNG二维码路径": os.path.relpath(png_path, ROOT),
+                "SVG二维码路径": os.path.relpath(svg_path, ROOT),
+            }
+        )
+        print(f"generated {item['base_name']}.png / .svg -> {item['url']}")
 
     csv_path = os.path.join(ROOT, "links.csv")
     with open(csv_path, "w", newline="", encoding="utf-8-sig") as f:
