@@ -4,7 +4,7 @@
 
 - 在线地址：https://zhesunxing.github.io/video-portfolio/
 - 托管：GitHub Pages（Deploy from a branch，main 分支，/root 目录）
-- 内容：`index.html` 总览页 + `work-01.html`～`work-11.html` 11 个独立播放页
+- 内容：`index.html` 总览页 + `work-01.html`～`work-12.html` 12 个独立播放页 + 手机优化的视觉作品集阅读页
 
 ## 本地开发
 
@@ -16,4 +16,4 @@
 
 ## 二维码
 
-`qrcodes/` 目录内含每个作品的 PNG + SVG 二维码，`links.csv` 是完整对照表。
+`qrcodes/` 目录内含每个作品的 PNG + SVG 二维码，`links.csv` 是完整对照表。视觉设计作品集二维码指向 `portfolio-pdf.html` 在线阅读页，扫码不会触发 PDF 下载。

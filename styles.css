@@ -274,3 +274,152 @@ img, video {
 .player-nav a:hover {
   color: var(--color-accent);
 }
+
+/* ---------- Mobile-first portfolio reader ---------- */
+
+.portfolio-reader {
+  background: #e9e5de;
+}
+
+.reader-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(246, 243, 238, 0.96);
+  border-bottom: 1px solid var(--color-hairline);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+}
+
+.reader-bar {
+  width: min(100% - 32px, 1120px);
+  min-height: 76px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 24px;
+}
+
+.reader-back {
+  margin: 0;
+  justify-self: start;
+}
+
+.reader-title {
+  text-align: center;
+}
+
+.reader-title .eyebrow {
+  margin: 0 0 2px;
+  font-size: 10px;
+  line-height: 1.4;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-ink-soft);
+}
+
+.reader-title h1 {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: 18px;
+  line-height: 1.35;
+  font-weight: 500;
+}
+
+.reader-back:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+.portfolio-pages {
+  width: min(100% - 32px, 1080px);
+  margin: 24px auto 64px;
+}
+
+.portfolio-page {
+  position: relative;
+  margin: 0 0 24px;
+  background: var(--color-bg-raised);
+  border: 1px solid var(--color-hairline);
+  overflow: hidden;
+}
+
+.portfolio-page img {
+  width: 100%;
+  height: auto;
+  margin: 0;
+  border: 0;
+}
+
+.page-marker {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1;
+  margin: 0;
+  padding: 4px 8px;
+  background: rgba(23, 20, 15, 0.72);
+  color: #f6f3ee;
+  border-radius: 2px;
+  font-size: 11px;
+  line-height: 1.2;
+  font-variant-numeric: tabular-nums;
+}
+
+.reader-footer {
+  background: var(--color-bg);
+}
+
+@media (max-width: 700px) {
+  .reader-header {
+    position: static;
+  }
+
+  .reader-bar {
+    width: min(100% - 24px, 1120px);
+    min-height: 0;
+    padding: 12px 0 14px;
+    grid-template-columns: 1fr;
+    gap: 10px 16px;
+  }
+
+  .reader-title {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    text-align: left;
+  }
+
+  .reader-title h1 {
+    font-size: 17px;
+  }
+
+  .reader-back {
+    grid-row: 2;
+  }
+
+  .reader-back {
+    min-height: 44px;
+    margin: 0;
+  }
+
+  .portfolio-pages {
+    width: 100%;
+    margin: 0 auto 40px;
+  }
+
+  .portfolio-page {
+    margin-bottom: 8px;
+    border-left: 0;
+    border-right: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

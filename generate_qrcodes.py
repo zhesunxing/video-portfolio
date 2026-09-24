@@ -18,12 +18,12 @@ BASE_URL = "https://zhesunxing.github.io/video-portfolio"
 ROOT = os.path.dirname(os.path.abspath(__file__))
 QR_DIR = os.path.join(ROOT, "qrcodes")
 
-# Extra standalone targets that are not part of works.json (e.g. resume PDF).
+# Extra standalone targets that are not part of works.json.
 EXTRA_TARGETS = [
     {
         "id": "resume",
-        "title": "视觉设计作品集 PDF",
-        "url": f"{BASE_URL}/assets/pdf/hou-jichang-portfolio.pdf",
+        "title": "视觉设计作品集",
+        "url": f"{BASE_URL}/portfolio-pdf.html",
         "base_name": "resume-portfolio-pdf",
     },
 ]
