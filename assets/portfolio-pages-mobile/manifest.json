@@ -1,0 +1,181 @@
+{
+  "chunkHeight" : 1800,
+  "format" : "jpg",
+  "images" : {
+    "page-01-part-01.jpg" : [
+      1080,
+      608
+    ],
+    "page-02-part-01.jpg" : [
+      1080,
+      608
+    ],
+    "page-03-part-01.jpg" : [
+      1080,
+      608
+    ],
+    "page-04-part-01.jpg" : [
+      1080,
+      357
+    ],
+    "page-05-part-01.jpg" : [
+      1080,
+      1800
+    ],
+    "page-05-part-02.jpg" : [
+      1080,
+      1800
+    ],
+    "page-05-part-03.jpg" : [
+      1080,
+      1800
+    ],
+    "page-05-part-04.jpg" : [
+      1080,
+      1560
+    ],
+    "page-06-part-01.jpg" : [
+      1080,
+      1800
+    ],
+    "page-06-part-02.jpg" : [
+      1080,
+      1800
+    ],
+    "page-06-part-03.jpg" : [
+      1080,
+      1800
+    ],
+    "page-06-part-04.jpg" : [
+      1080,
+      1800
+    ],
+    "page-06-part-05.jpg" : [
+      1080,
+      323
+    ],
+    "page-07-part-01.jpg" : [
+      1080,
+      1800
+    ],
+    "page-07-part-02.jpg" : [
+      1080,
+      1800
+    ],
+    "page-07-part-03.jpg" : [
+      1080,
+      1800
+    ],
+    "page-07-part-04.jpg" : [
+      1080,
+      1466
+    ],
+    "page-08-part-01.jpg" : [
+      1080,
+      1800
+    ],
+    "page-08-part-02.jpg" : [
+      1080,
+      1800
+    ],
+    "page-08-part-03.jpg" : [
+      1080,
+      1742
+    ],
+    "page-09-part-01.jpg" : [
+      1080,
+      357
+    ],
+    "page-10-part-01.jpg" : [
+      1080,
+      1800
+    ],
+    "page-10-part-02.jpg" : [
+      1080,
+      1800
+    ],
+    "page-10-part-03.jpg" : [
+      1080,
+      1703
+    ],
+    "page-11-part-01.jpg" : [
+      1080,
+      1800
+    ],
+    "page-11-part-02.jpg" : [
+      1080,
+      1681
+    ],
+    "page-12-part-01.jpg" : [
+      1080,
+      357
+    ],
+    "page-13-part-01.jpg" : [
+      1080,
+      1800
+    ],
+    "page-13-part-02.jpg" : [
+      1080,
+      1800
+    ],
+    "page-13-part-03.jpg" : [
+      1080,
+      1518
+    ],
+    "page-14-part-01.jpg" : [
+      1080,
+      1800
+    ],
+    "page-14-part-02.jpg" : [
+      1080,
+      1800
+    ],
+    "page-14-part-03.jpg" : [
+      1080,
+      1800
+    ],
+    "page-14-part-04.jpg" : [
+      1080,
+      1800
+    ],
+    "page-14-part-05.jpg" : [
+      1080,
+      302
+    ],
+    "page-15-part-01.jpg" : [
+      1080,
+      1800
+    ],
+    "page-15-part-02.jpg" : [
+      1080,
+      1800
+    ],
+    "page-15-part-03.jpg" : [
+      1080,
+      1800
+    ],
+    "page-15-part-04.jpg" : [
+      1080,
+      1800
+    ],
+    "page-15-part-05.jpg" : [
+      1080,
+      1091
+    ],
+    "page-16-part-01.jpg" : [
+      1080,
+      1800
+    ],
+    "page-16-part-02.jpg" : [
+      1080,
+      575
+    ],
+    "page-17-part-01.jpg" : [
+      1080,
+      594
+    ]
+  },
+  "pageCount" : 17,
+  "renderedPages" : 17,
+  "width" : 1080
+}

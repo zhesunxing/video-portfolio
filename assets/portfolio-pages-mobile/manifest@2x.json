@@ -1,0 +1,182 @@
+{
+  "chunkHeight": 3600,
+  "format": "webp",
+  "images": {
+    "page-01-part-01@2x.webp": [
+      2160,
+      1215
+    ],
+    "page-02-part-01@2x.webp": [
+      2160,
+      1215
+    ],
+    "page-03-part-01@2x.webp": [
+      2160,
+      1215
+    ],
+    "page-04-part-01@2x.webp": [
+      2160,
+      714
+    ],
+    "page-05-part-01@2x.webp": [
+      2160,
+      3600
+    ],
+    "page-05-part-02@2x.webp": [
+      2160,
+      3600
+    ],
+    "page-05-part-03@2x.webp": [
+      2160,
+      3600
+    ],
+    "page-05-part-04@2x.webp": [
+      2160,
+      3121
+    ],
+    "page-06-part-01@2x.webp": [
+      2160,
+      3600
+    ],
+    "page-06-part-02@2x.webp": [
+      2160,
+      3600
+    ],
+    "page-06-part-03@2x.webp": [
+      2160,
+      3600
+    ],
+    "page-06-part-04@2x.webp": [
+      2160,
+      3600
+    ],
+    "page-06-part-05@2x.webp": [
+      2160,
+      647
+    ],
+    "page-07-part-01@2x.webp": [
+      2160,
+      3600
+    ],
+    "page-07-part-02@2x.webp": [
+      2160,
+      3600
+    ],
+    "page-07-part-03@2x.webp": [
+      2160,
+      3600
+    ],
+    "page-07-part-04@2x.webp": [
+      2160,
+      2933
+    ],
+    "page-08-part-01@2x.webp": [
+      2160,
+      3600
+    ],
+    "page-08-part-02@2x.webp": [
+      2160,
+      3600
+    ],
+    "page-08-part-03@2x.webp": [
+      2160,
+      3484
+    ],
+    "page-09-part-01@2x.webp": [
+      2160,
+      714
+    ],
+    "page-10-part-01@2x.webp": [
+      2160,
+      3600
+    ],
+    "page-10-part-02@2x.webp": [
+      2160,
+      3600
+    ],
+    "page-10-part-03@2x.webp": [
+      2160,
+      3407
+    ],
+    "page-11-part-01@2x.webp": [
+      2160,
+      3600
+    ],
+    "page-11-part-02@2x.webp": [
+      2160,
+      3362
+    ],
+    "page-12-part-01@2x.webp": [
+      2160,
+      714
+    ],
+    "page-13-part-01@2x.webp": [
+      2160,
+      3600
+    ],
+    "page-13-part-02@2x.webp": [
+      2160,
+      3600
+    ],
+    "page-13-part-03@2x.webp": [
+      2160,
+      3035
+    ],
+    "page-14-part-01@2x.webp": [
+      2160,
+      3600
+    ],
+    "page-14-part-02@2x.webp": [
+      2160,
+      3600
+    ],
+    "page-14-part-03@2x.webp": [
+      2160,
+      3600
+    ],
+    "page-14-part-04@2x.webp": [
+      2160,
+      3600
+    ],
+    "page-14-part-05@2x.webp": [
+      2160,
+      604
+    ],
+    "page-15-part-01@2x.webp": [
+      2160,
+      3600
+    ],
+    "page-15-part-02@2x.webp": [
+      2160,
+      3600
+    ],
+    "page-15-part-03@2x.webp": [
+      2160,
+      3600
+    ],
+    "page-15-part-04@2x.webp": [
+      2160,
+      3600
+    ],
+    "page-15-part-05@2x.webp": [
+      2160,
+      2183
+    ],
+    "page-16-part-01@2x.webp": [
+      2160,
+      3600
+    ],
+    "page-16-part-02@2x.webp": [
+      2160,
+      1150
+    ],
+    "page-17-part-01@2x.webp": [
+      2160,
+      1188
+    ]
+  },
+  "pageCount": 17,
+  "renderedPages": 17,
+  "webpQuality": 84,
+  "width": 2160
+}

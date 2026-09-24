@@ -4,58 +4,32 @@
 // This keeps the site reproducible after editing works.json (add/remove/
 // rename works) without hand-editing every HTML file.
 
-import { readFileSync, readdirSync, writeFileSync } from "node:fs";
+import { readFileSync, writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const works = JSON.parse(readFileSync(path.join(__dirname, "works.json"), "utf8"));
 
-const PORTFOLIO_IMAGE_DIMENSIONS = {
-  "page-01-part-01.jpg": [1080, 607],
-  "page-02-part-01.jpg": [1080, 607],
-  "page-03-part-01.jpg": [1080, 607],
-  "page-04-part-01.jpg": [1079, 357],
-  "page-05-part-01.jpg": [1079, 1800],
-  "page-05-part-02.jpg": [1079, 1800],
-  "page-05-part-03.jpg": [1079, 1800],
-  "page-05-part-04.jpg": [1079, 1560],
-  "page-06-part-01.jpg": [1079, 1800],
-  "page-06-part-02.jpg": [1079, 1800],
-  "page-06-part-03.jpg": [1079, 1800],
-  "page-06-part-04.jpg": [1079, 1800],
-  "page-06-part-05.jpg": [1079, 322],
-  "page-07-part-01.jpg": [1079, 1800],
-  "page-07-part-02.jpg": [1079, 1800],
-  "page-07-part-03.jpg": [1079, 1800],
-  "page-07-part-04.jpg": [1079, 1466],
-  "page-08-part-01.jpg": [1079, 1800],
-  "page-08-part-02.jpg": [1079, 1800],
-  "page-08-part-03.jpg": [1079, 1742],
-  "page-09-part-01.jpg": [1079, 357],
-  "page-10-part-01.jpg": [1079, 1800],
-  "page-10-part-02.jpg": [1079, 1800],
-  "page-10-part-03.jpg": [1079, 1703],
-  "page-11-part-01.jpg": [1080, 1800],
-  "page-11-part-02.jpg": [1080, 1680],
-  "page-12-part-01.jpg": [1079, 357],
-  "page-13-part-01.jpg": [1080, 1800],
-  "page-13-part-02.jpg": [1080, 1800],
-  "page-13-part-03.jpg": [1080, 1517],
-  "page-14-part-01.jpg": [1079, 1800],
-  "page-14-part-02.jpg": [1079, 1800],
-  "page-14-part-03.jpg": [1079, 1800],
-  "page-14-part-04.jpg": [1079, 1800],
-  "page-14-part-05.jpg": [1079, 302],
-  "page-15-part-01.jpg": [1079, 1800],
-  "page-15-part-02.jpg": [1079, 1800],
-  "page-15-part-03.jpg": [1079, 1800],
-  "page-15-part-04.jpg": [1079, 1800],
-  "page-15-part-05.jpg": [1079, 1091],
-  "page-16-part-01.jpg": [1080, 1800],
-  "page-16-part-02.jpg": [1080, 574],
-  "page-17-part-01.jpg": [1080, 594],
-};
+// The reader images are produced by tools/build_portfolio_pages.py, which also
+// writes the manifests read below. Keeping the sizes in the manifests avoids a
+// hand-maintained table drifting away from the rendered files.
+const PORTFOLIO_IMAGE_DIR = "assets/portfolio-pages-mobile";
+const PORTFOLIO_SIZES =
+  "(max-width: 700px) 100vw, (max-width: 1112px) calc(100vw - 32px), 1080px";
+
+function readPortfolioManifest(fileName) {
+  const file = path.join(__dirname, PORTFOLIO_IMAGE_DIR, fileName);
+  try {
+    return JSON.parse(readFileSync(file, "utf8"));
+  } catch {
+    return null;
+  }
+}
+
+function portfolioStem(name) {
+  return name.replace(/@2x\.(jpg|webp)$/i, "").replace(/\.(jpg|webp)$/i, "");
+}
 
 const SITE_TITLE = "作品集 · Video Portfolio";
 const SITE_LEDE = "一组用于招聘方与客户预览的产品动效与运营视觉演示，按发布顺序呈现，点击任意作品进入独立播放页。";
@@ -177,25 +151,39 @@ function renderWorkPage(work, index) {
 }
 
 function renderPortfolioPage() {
-  const imageDir = path.join(__dirname, "assets", "portfolio-pages-mobile");
-  const images = readdirSync(imageDir)
-    .filter((name) => /^page-\d{2}-part-\d{2}\.jpg$/.test(name))
-    .sort();
+  const base = readPortfolioManifest("manifest.json");
+  if (!base) {
+    throw new Error(
+      `缺少 ${PORTFOLIO_IMAGE_DIR}/manifest.json，请先运行 tools/build_portfolio_pages.py`
+    );
+  }
 
-  const pages = Array.from({ length: 17 }, (_, pageIndex) => {
+  const retina = readPortfolioManifest("manifest@2x.json");
+  const retinaByStem = new Map(
+    Object.entries(retina?.images ?? {}).map(([name, size]) => [portfolioStem(name), [name, size]])
+  );
+
+  const imageNames = Object.keys(base.images).sort();
+  const pageCount = base.pageCount;
+
+  const pages = Array.from({ length: pageCount }, (_, pageIndex) => {
     const pageNo = String(pageIndex + 1).padStart(2, "0");
-    const pageImages = images.filter((name) => name.startsWith(`page-${pageNo}-`));
+    const pageImages = imageNames.filter((name) => name.startsWith(`page-${pageNo}-`));
     const chunks = pageImages
       .map((name, chunkIndex) => {
         const eager = pageIndex === 0 && chunkIndex === 0;
         const chunkLabel = pageImages.length > 1 ? `，第 ${chunkIndex + 1} 部分` : "";
-        const [width, height] = PORTFOLIO_IMAGE_DIMENSIONS[name];
-        return `        <img src="assets/portfolio-pages-mobile/${name}" alt="视觉设计作品集第 ${pageIndex + 1} 页${chunkLabel}" width="${width}" height="${height}" loading="${eager ? "eager" : "lazy"}" decoding="async"${eager ? ' fetchpriority="high"' : ""}>`;
+        const [width, height] = base.images[name];
+        const retinaEntry = retinaByStem.get(portfolioStem(name));
+        const srcset = retinaEntry
+          ? ` srcset="${PORTFOLIO_IMAGE_DIR}/${name} ${width}w, ${PORTFOLIO_IMAGE_DIR}/${retinaEntry[0]} ${retinaEntry[1][0]}w" sizes="${PORTFOLIO_SIZES}"`
+          : "";
+        return `        <img src="${PORTFOLIO_IMAGE_DIR}/${name}"${srcset} alt="视觉设计作品集第 ${pageIndex + 1} 页${chunkLabel}" width="${width}" height="${height}" loading="${eager ? "eager" : "lazy"}" decoding="async"${eager ? ' fetchpriority="high"' : ""}>`;
       })
       .join("\n");
 
     return `      <section class="portfolio-page" aria-label="作品集第 ${pageIndex + 1} 页">
-        <p class="page-marker">${pageNo} / 17</p>
+        <p class="page-marker">${pageNo} / ${pageCount}</p>
 ${chunks}
       </section>`;
   }).join("\n");
