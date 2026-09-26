@@ -3,84 +3,84 @@
     "id": "01",
     "slug": "work-01",
     "title": "蹦沙卡拉卡",
-    "titleEn": "Beng Sha Ka La Ka",
+    "group": "kuaishou",
     "video": "assets/videos/bengshakalaka.mp4"
   },
   {
     "id": "02",
     "slug": "work-02",
     "title": "红包券",
-    "titleEn": "Red Packet Coupon",
+    "group": "qunar",
     "video": "assets/videos/hongbaoquan.mp4"
   },
   {
     "id": "03",
     "slug": "work-03",
     "title": "机票弹窗",
-    "titleEn": "Flight Ticket Popup",
+    "group": "qunar",
     "video": "assets/videos/jipiao-tanchuang.mp4"
   },
   {
     "id": "04",
     "slug": "work-04",
     "title": "机票 Demo 2",
-    "titleEn": "Flight Ticket Demo 2",
+    "group": "qunar",
     "video": "assets/videos/jipiao-demo2.mp4"
   },
   {
     "id": "05",
     "slug": "work-05",
     "title": "假期别走",
-    "titleEn": "Don't Leave the Holiday",
+    "group": "qunar",
     "video": "assets/videos/jiaqi-biezou.mp4"
   },
   {
     "id": "06",
     "slug": "work-06",
     "title": "拼手气红包",
-    "titleEn": "Lucky Red Packet",
+    "group": "qunar",
     "video": "assets/videos/pinshouqi-hongbao.mp4"
   },
   {
     "id": "07",
     "slug": "work-07",
     "title": "七夕那天你将会",
-    "titleEn": "On Qixi, You Will",
+    "group": "kuaishou",
     "video": "assets/videos/qixi-natian.mp4"
   },
   {
     "id": "08",
     "slug": "work-08",
     "title": "三角洲火崽崽",
-    "titleEn": "Delta Fire Cub",
+    "group": "kuaishou",
     "video": "assets/videos/sanjiaozhou-huozaizai.mp4"
   },
   {
     "id": "09",
     "slug": "work-09",
     "title": "甜妹随心拍",
-    "titleEn": "Sweet Girl Free Shot",
+    "group": "kuaishou",
     "video": "assets/videos/tianmei-suixinpai.mp4"
   },
   {
     "id": "10",
     "slug": "work-10",
     "title": "中秋许愿池",
-    "titleEn": "Mid-Autumn Wishing Pool",
+    "group": "kuaishou",
     "video": "assets/videos/zhongqiu-xuyuanchi.mp4"
   },
   {
     "id": "11",
     "slug": "work-11",
     "title": "Icon 平台演示",
-    "titleEn": "Icon Platform Demo",
+    "group": "kuaishou",
     "video": "assets/videos/icon-pingtai-yanshi.mp4"
   },
   {
     "id": "12",
     "slug": "work-12",
     "title": "崽崽百变",
-    "titleEn": "Cub Shapeshift",
+    "group": "kuaishou",
     "video": "assets/videos/zaizai-baibian.mp4"
   }
 ]
