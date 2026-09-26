@@ -9,11 +9,11 @@
   --color-bg: #f6f3ee;
   --color-bg-raised: #fffdf9;
   --color-ink: #17140f;
-  --color-ink-soft: #57503f;
+  --color-ink-soft: #514a3d;
   --color-hairline: #ddd6c9;
   --color-accent: #a34b32;
   --color-accent-soft: #c98a72;
-  --font-serif: "New York", "Iowan Old Style", "Palatino Linotype", Georgia, "Songti SC", serif;
+  --font-serif: "SF Pro Display", "Avenir Next", "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
   --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Helvetica Neue", Arial, sans-serif;
   --max-width: 1120px;
   --gap: 32px;
@@ -810,4 +810,46 @@ img, video {
     display: inline-block;
     margin-top: 14px;
   }
+}
+
+/* Keep the final display styles visually strong after responsive overrides. */
+.site-header h1,
+.work-header h1,
+.reader-title h1,
+.featured-link h2,
+.directory-heading h2,
+.section-heading h2,
+.reader-section-heading h2,
+.demo-group-heading h3,
+.work-card .meta h3,
+.demo-card h3 {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+}
+
+.site-header h1,
+.work-header h1,
+.reader-title h1 {
+  letter-spacing: -0.045em;
+}
+
+.site-header p.lede,
+.featured-link p:not(.eyebrow),
+.directory-heading > p:last-child,
+.section-heading > p,
+.reader-section-heading > p,
+.demo-group-heading > p:last-child {
+  font-weight: 500;
+}
+
+.eyebrow,
+.card-kicker,
+.page-marker,
+.reader-toc a,
+.back-link,
+.text-link,
+.card-action,
+.featured-action {
+  font-weight: 600;
 }

@@ -11,7 +11,7 @@ const works = JSON.parse(readFileSync(path.join(__dirname, "works.json"), "utf8"
 const PORTFOLIO_IMAGE_DIR = "assets/portfolio-pages-mobile";
 const PORTFOLIO_SIZES =
   "(max-width: 700px) 100vw, (max-width: 1112px) calc(100vw - 32px), 1080px";
-const GROUP_ORDER = ["kuaishou", "qunar"];
+const GROUP_ORDER = ["kuaishou", "qunar", "vibe-coding"];
 const GROUPS = {
   kuaishou: {
     id: "kuaishou-demos",
@@ -22,6 +22,11 @@ const GROUPS = {
     id: "qunar-demos",
     label: "去哪儿旅行 · 红包弹窗 Demo",
     intro: "去哪儿旅行场景中的红包、机票与活动弹窗动效演示。",
+  },
+  "vibe-coding": {
+    id: "vibe-coding-demo",
+    label: "Vibe Coding · Icon 平台演示",
+    intro: "实习期间完成的 Icon 制作平台演示，展示从需求到可用工具的 Vibe Coding 实践。",
   },
 };
 
